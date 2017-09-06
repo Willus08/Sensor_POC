@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Gyroscope_POC</string>
+    <string name="temperture">Temperture</string>
+    <string name="gravity">Gravity</string>
+    <string name="rotation">Rotation</string>
+    <string name="acelerometer">Acelerometer</string>
+    <string name="gyroscope">Gyroscope</string>
+</resources>
