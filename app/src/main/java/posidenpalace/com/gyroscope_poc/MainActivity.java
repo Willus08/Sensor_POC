@@ -79,19 +79,32 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onSensorChanged: " + sensorEvent.sensor.getName());
                 switch ( sensorEvent.sensor.getName()){
                     case "Rotation Vector":
-                        rotX.setText("X: "+sensorEvent.values[0]);
-                        rotY.setText("Y: "+sensorEvent.values[1]);
-                        rotZ.setText("Z: "+sensorEvent.values[2]);
+                        int rX = (int) (sensorEvent.values[0]*100);
+                        int rY = (int) (sensorEvent.values[1]*100);
+                        int rZ = (int) (sensorEvent.values[2]*100);
+                        rotX.setText("X: "+rX);
+                        rotY.setText("Y: "+rY);
+                        rotZ.setText("Z: "+rZ);
                         break;
 
                     case "ICM20610 Acceleration Sensor":
-                        accelX.setText("X: "+sensorEvent.values[0]);
-                        accelY.setText("Y: "+sensorEvent.values[1]);
-                        accelZ.setText("Z: "+sensorEvent.values[2]);
+                        int aX = (int) ((sensorEvent.values[0]-9.8)*100);
+                        int aY = (int) ((sensorEvent.values[1]-9.8)*100);
+                        int aZ = (int) ((sensorEvent.values[2]-9.8)*100);
+                        accelX.setText("X: "+aX);
+                        accelY.setText("Y: "+aY);
+                        accelZ.setText("Z: "+aZ);
                         break;
 
 
                     case "ICM20610 Gyroscope Sensor":
+
+                        int gX = (int) (sensorEvent.values[0]*100);
+                        int gY = (int) (sensorEvent.values[1]*100);
+                        int gZ = (int) (sensorEvent.values[2]*100);
+                        gyroX.setText("X: "+gX);
+                        gyroY.setText("Y: "+gY);
+                        gyroZ.setText("Z: "+gZ);
                         break;
 
                 }
